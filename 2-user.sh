@@ -11,10 +11,10 @@
 echo -e "\nINSTALLING AUR SOFTWARE\n"
 # You can solve users running this script as root with this and then doing the same for the next for statement. However I will leave this up to you.
 
-echo "CLONING: YAY"
+echo "CLONING: PARU"
 cd ~
-git clone "https://aur.archlinux.org/yay.git"
-cd ${HOME}/yay
+git clone "https://aur.archlinux.org/paru.git"
+cd ${HOME}/paru
 makepkg -si --noconfirm
 cd ~
 touch "$HOME/.cache/zshhistory"
@@ -50,7 +50,7 @@ PKGS=(
 )
 
 for PKG in "${PKGS[@]}"; do
-    yay -S --noconfirm $PKG
+    paru -S --noconfirm $PKG
 done
 
 export PATH=$PATH:~/.local/bin
